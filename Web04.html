@@ -4,16 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seoraé Bakery</title>
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Web04.css">
 </head>
-
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
     <div class="container">
-
         <a class="navbar-brand" href="#home">
             <div class="logo-circle">
                 <img src="img/logo-cake.png" alt="Logo">
@@ -26,48 +23,26 @@
 
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                </li>
-
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
         </div>
-
     </div>
 </nav>
 
 <section id="home" class="hero-section">
     <div class="container">
         <div class="row align-items-center">
-
             <div class="col-lg-6">
                 <p class="small-title">Bakery House</p>
-
-                <h1>
-                    Seoraé Bakehouse
-                </h1>
-
+                <h1>Seoraé Bakehouse</h1>
                 <p class="hero-description">
                     Sweet little things, baked just for you. ♡
                     <br>From our oven to your heart — Seoraé Bakery.
                 </p>
-
-                <a href="#contact" class="btn btn-dark rounded-pill px-4">
-                    Sweet Order
-                </a>
+                <a href="#contact" class="btn btn-dark rounded-pill px-4">Sweet Order</a>
             </div>
 
             <div class="col-lg-6 text-center">
@@ -75,134 +50,121 @@
                     <img src="img/logo-cake.png" alt="Profile" class="hero-image">
                 </div>
             </div>
-
         </div>
     </div>
 </section>
 
 <section id="services" class="services-section">
     <div class="container">
-
         <div class="text-center mb-5">
             <h2>Our Product</h2>
-
-            <p class="section-description">
-                Baked softly, loved deeply.
-            </p>
+            <p class="section-description">Baked softly, loved deeply.</p>
         </div>
 
-        <div class="row">
-
+        <div class="row" id="productCategories">
             <div class="col-md-4 mb-4">
-                <div class="service-card">
+                <div class="service-card" onclick="showProducts('cake')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showProducts('cake')}">
                     <div class="service-icon">˚₊‧🍰‧₊˚</div>
-
                     <h3>Cake</h3>
-
-                    <p>
-                        Soft, sweet, and made with a little sprinkle of love.
-                    </p>
+                    <p>Soft, sweet, and made with a little sprinkle of love.</p>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
-                <div class="service-card">
+                <div class="service-card" onclick="showProducts('pastry')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showProducts('pastry')}">
                     <div class="service-icon">˚₊‧🥐‧₊˚</div>
-
                     <h3>Pastry</h3>
-
-                    <p>
-                        Buttery, flaky, and baked to make your day a little sweeter.
-                    </p>
+                    <p>Buttery, flaky, and baked to make your day a little sweeter.</p>
                 </div>
             </div>
 
             <div class="col-md-4 mb-4">
-                <div class="service-card">
+                <div class="service-card" onclick="showProducts('donut')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showProducts('donut')}">
                     <div class="service-icon">˚₊‧🍩‧₊˚</div>
-
                     <h3>Donut</h3>
-
-                    <p>
-                        Soft, fluffy, and sweet with a little sprinkle of happiness.
-                    </p>
+                    <p>Soft, fluffy, and sweet with a little sprinkle of happiness.</p>
                 </div>
             </div>
-
         </div>
 
+        <div id="productMenu" class="product-menu" hidden>
+            <div class="product-menu-header">
+                <div>
+                    <p class="product-eyebrow">MADE WITH LOVE</p>
+                    <h3 id="productMenuTitle">Our Cake Collection</h3>
+                    <p id="productMenuDescription">A little sweetness for your day.</p>
+                </div>
+                <button type="button" class="product-back" onclick="hideProducts()">← Back</button>
+            </div>
+            <div class="row" id="productList"></div>
+        </div>
     </div>
 </section>
 
 <section id="about" class="about-section">
     <div class="container">
+        <h2 class="text-center">About Us</h2>
 
-        <div class="text-center mb-5">
-            <h2>About Us</h2>
-        </div>
-
-        <div class="row align-items-center mt-5">
-
-            <div class="col-lg-5 text-center mb-4 mb-lg-0">
+        <div class="row align-items-start about-content">
+            <div class="col-md-5">
                 <div class="about-image-box">
-                    <img src="img/seorae-bakery.png" alt="About Us" class="about-image">
+                    <img src="img/seorae-bakery.png" alt="Seoraé Bakery">
                 </div>
             </div>
 
-            <div class="col-lg-7">
-
-                <p class="about-intro">
+            <div class="col-md-7">
+                <p>
                     Seoraé Bakery hadir sebagai ruang kecil yang
-                    menyajikan berbagai hidangan manis dengan rasa, tampilan,
-                    dan suasana yang dibuat untuk menciptakan momen istimewa.
+                    menyajikan berbagai hidangan manis dengan rasa,
+                    tampilan, dan suasana yang dibuat untuk
+                    menciptakan momen istimewa.
                 </p>
 
-                <div class="row mt-4">
-
-                    <div class="col-md-6 mb-4">
+                <div class="row">
+                    <div class="col-md-6">
                         <h3>My Journey</h3>
-
                         <p>
-                            Berawal dari kecintaan pada dunia pastry, Seoraé
-                            terus berkembang melalui berbagai eksperimen
-                            rasa dan kreasi. Setiap produk dibuat dengan
-                            perhatian pada detail untuk menghadirkan
-                            pengalaman yang berkesan.
+                            Berawal dari kecintaan pada dunia pastry,
+                            Seoraé terus berkembang melalui berbagai
+                            eksperimen rasa dan kreasi.
                         </p>
                     </div>
 
-                    <div class="col-md-6 mb-4">
+                    <div class="col-md-6">
                         <h3>My Approach</h3>
-
                         <p>
                             Kami percaya bahwa makanan bukan hanya
                             tentang rasa, tetapi juga tentang pengalaman.
-                            Karena itu, kami memadukan kualitas bahan,
-                            kreativitas, dan visual yang lembut dalam setiap
-                            sajian.
                         </p>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
 
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="text-center mb-4">
+                    <p>OUR PERFORMANCE</p>
+                    <h3>Our Monthly Sales</h3>
+                    <p>Number of products sold each week in a month</p>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
 <section id="contact" class="contact-section">
     <div class="container">
-
         <div class="text-center mb-5">
             <h2>Place Your Order</h2>
         </div>
 
         <div class="row align-items-center mt-5">
-
             <div class="col-lg-5 mb-4">
-
                 <h2>
                     Made for your
                     <br>sweetest<br>
@@ -213,61 +175,36 @@
                     <p>hello@seoraebakery.com</p>
                     <p>Jakarta, Indonesia</p>
                 </div>
-
             </div>
 
             <div class="col-lg-7">
-
                 <form class="contact-form">
-
                     <div class="row">
-
                         <div class="col-md-6 mb-3">
-                            <input
-                                type="text"
-                                class="form-control"
-                                placeholder="Name"
-                            >
+                            <input type="text" class="form-control" placeholder="Name">
                         </div>
 
                         <div class="col-md-6 mb-3">
-                            <input
-                                type="tel"
-                                class="form-control"
-                                placeholder="Contact"
-                            >
+                            <input type="tel" class="form-control" placeholder="Contact">
                         </div>
 
                         <div class="col-12 mb-3">
-                            <textarea
-                                class="form-control"
-                                rows="5"
-                                placeholder="Tell us your cravings..."
-                            ></textarea>
+                            <textarea class="form-control" rows="5" placeholder="Tell us your cravings..."></textarea>
                         </div>
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary px-5">
-                                Kirim Pesan
-                            </button>
+                            <button type="submit" class="btn btn-primary px-5">Kirim Pesan</button>
                         </div>
-
                     </div>
-
                 </form>
-
             </div>
-
         </div>
-
     </div>
 </section>
 
 <footer>
     <div class="container">
-
         <div class="row align-items-center">
-
             <div class="col-md-6">
                 <h4>Seoraé Bakery</h4>
                 <p>Where Elegance Meets Sweetness</p>
@@ -279,21 +216,157 @@
                     <br>@seorae.bakery
                 </p>
             </div>
-
         </div>
 
         <hr>
-
-        <p class="text-center mb-0">
-            © 2026 Seoraé Bakery
-        </p>
-
+        <p class="text-center mb-0">© 2026 Seoraé Bakery</p>
     </div>
 </footer>
 
 <script src="js/jquery-3.5.1.slim.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/chart.js"></script>
+
+<script>
+const menuLinks = document.querySelectorAll(".nav-link");
+
+menuLinks.forEach(function(menu) {
+    menu.addEventListener("click", function() {
+        menuLinks.forEach(function(link) {
+            link.classList.remove("active");
+        });
+        this.classList.add("active");
+    });
+});
+
+const productData = {
+    cake: {
+        title: "Our Cake Collection",
+        description: "Sweet little cakes for your special moments.",
+        products: [
+            {
+                name: "Strawberry Cake",
+                description: "$65",
+                image: "img/strawberrycake.jpg"
+            },
+            {
+                name: "Chocolate Cake",
+                description: "$65",
+                image: "img/chococake.jpg"
+            },
+            {
+                name: "Vanilla Cake",
+                description: "$55",
+                image: "img/vanillacake.jpg"
+            }
+        ]
+    },
+
+    pastry: {
+        title: "Our Pastry Collection",
+        description: "Buttery pastries, freshly baked with love.",
+        products: [
+            {
+                name: "Croissant",
+                description: "$5",
+                image: "img/croissant.jpg"
+            },
+            {
+                name: "Cinnamon Roll",
+                description: "$6",
+                image: "img/cinnamon-roll.jpg"
+            },
+            {
+                name: "Danish Pastry",
+                description: "$6.5",
+                image: "img/danish-pastry.jpg"
+            }
+        ]
+    },
+
+    donut: {
+        title: "Our Donut Collection",
+        description: "Soft, fluffy donuts with delightful toppings.",
+        products: [
+            {
+                name: "Glazed Donut",
+                description: "$4.5",
+                image: "img/glazed-donut.jpg"
+            },
+            {
+                name: "Bomboloni",
+                description: "$6",
+                image: "img/bomboloni.jpg"
+            },
+            {
+                name: "Cruller Donut",
+                description: "$5.5",
+                image: "img/cruller.jpg"
+            }
+        ]
+    }
+};
+
+function showProducts(category) {
+    const data = productData[category];
+
+    if (!data) return;
+
+    document.getElementById("productMenuTitle").textContent = data.title;
+    document.getElementById("productMenuDescription").textContent = data.description;
+
+    document.getElementById("productList").innerHTML = data.products.map(function(product) {
+        return `
+            <div class="col-md-4 mb-4">
+                <div class="menu-product-card">
+                    <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    <div class="menu-product-info">
+                        <h4>${product.name}</h4>
+                        <p>${product.description}</p>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join("");
+
+    document.getElementById("productCategories").hidden = true;
+    document.getElementById("productMenu").hidden = false;
+}
+
+function hideProducts() {
+    document.getElementById("productMenu").hidden = true;
+    document.getElementById("productCategories").hidden = false;
+}
+
+const salesCanvas = document.getElementById("salesChart");
+
+if (salesCanvas && typeof Chart !== "undefined") {
+    new Chart(salesCanvas, {
+        type: "line",
+        data: {
+            labels: ["January", "February", "March", "April", "May", "June"],
+            datasets: [{
+                label: "Produk Terjual",
+                data: [500, 2000, 1500, 2500, 4000, 5000],
+                backgroundColor: "#bd8050",
+                borderColor: "#6e491f",
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+} else {
+    console.log("Canvas atau Chart.js belum ditemukan.");
+}
+</script>
 
 </body>
 </html>
